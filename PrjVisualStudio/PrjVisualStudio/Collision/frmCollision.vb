@@ -33,7 +33,7 @@ Public Class frmCollision
         If MoveLeft.Checked Then PicEnemy.Left -= 10
 
         GetInfo()
-        'CollisionDetect()
+        CollisionDetect()
 
     End Sub
 

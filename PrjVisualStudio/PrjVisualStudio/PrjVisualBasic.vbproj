@@ -11,7 +11,8 @@
     <AssemblyName>PrjVisualStudio</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -51,6 +52,7 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -70,6 +72,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chart\frmChartLine.Designer.vb">
+      <DependentUpon>frmChartLine.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Chart\frmChartLine.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chart\frmChartBar.Designer.vb">
+      <DependentUpon>frmChartBar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Chart\frmChartBar.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Maths\frmTrigonometric.Designer.vb">
       <DependentUpon>frmTrigonometric.vb</DependentUpon>
     </Compile>
@@ -100,17 +114,23 @@
     <Compile Include="Data\frmDict.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="General\FrmLogin.vb">
+    <Compile Include="FrmMenu.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="General\FrmLogin.Designer.vb">
-      <DependentUpon>FrmLogin.vb</DependentUpon>
+    <Compile Include="FrmMenu.Designer.vb">
+      <DependentUpon>FrmMenu.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Maths\frmSquareRoot.Designer.vb">
       <DependentUpon>frmSquareRoot.vb</DependentUpon>
     </Compile>
     <Compile Include="Maths\frmSquareRoot.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mouse\FrmMouse.Designer.vb">
+      <DependentUpon>FrmMouse.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mouse\FrmMouse.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -130,6 +150,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Chart\frmChartBar.resx">
+      <DependentUpon>frmChartBar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chart\frmChartLine.resx">
+      <DependentUpon>frmChartLine.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Maths\frmTrigonometric.resx">
       <DependentUpon>frmTrigonometric.vb</DependentUpon>
     </EmbeddedResource>
@@ -145,11 +171,14 @@
     <EmbeddedResource Include="Data\frmDict.resx">
       <DependentUpon>frmDict.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="General\FrmLogin.resx">
-      <DependentUpon>FrmLogin.vb</DependentUpon>
+    <EmbeddedResource Include="FrmMenu.resx">
+      <DependentUpon>FrmMenu.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maths\frmSquareRoot.resx">
       <DependentUpon>frmSquareRoot.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mouse\FrmMouse.resx">
+      <DependentUpon>FrmMouse.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -169,6 +198,9 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="General\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
