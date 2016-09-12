@@ -1,6 +1,6 @@
-﻿namespace PrjVisualCsharp
+﻿namespace ImagingApp
 {
-    partial class Form1
+    partial class frmDatabase
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // frmDatabase
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(915, 572);
+            this.Name = "frmDatabase";
+            this.Text = "frmDatabase";
+            this.Load += new System.EventHandler(this.frmDatabase_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
     }
 }
-

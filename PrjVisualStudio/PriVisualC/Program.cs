@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PrjVisualCsharp
+namespace ImagingApp
 {
     static class Program
     {
@@ -16,7 +15,13 @@ namespace PrjVisualCsharp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //Application.Run(new frmTCPServer());
+            //Application.Run(new frmString());
+            //Application.Run(new frmPainting());
+            //Application.Run(new frmDatabase());
+
+            Application.Run(new frmImaging());
+
         }
     }
 }
