@@ -118,6 +118,7 @@
     <Compile Include="Chart\frmChartBar.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Date\ModDate.vb" />
     <Compile Include="Device\frmDevice.Designer.vb">
       <DependentUpon>frmDevice.vb</DependentUpon>
     </Compile>
@@ -125,6 +126,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Excel\ModExcel.vb" />
+    <Compile Include="GridView\ModGrid.vb" />
     <Compile Include="Maths\frmTrigonometric.Designer.vb">
       <DependentUpon>frmTrigonometric.vb</DependentUpon>
     </Compile>
