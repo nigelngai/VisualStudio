@@ -11,7 +11,7 @@
         strMonth = GetMonthNamebyNumber(Format(myPicker.Value, "MM"))
         strDate = Format(myPicker.Value, "dd")
 
-        GetMyDate = strYear & " " & strMonth & " " & strDate
+        GetMyDateFormat = strYear & " " & strMonth & " " & strDate
 
     End Function
 
