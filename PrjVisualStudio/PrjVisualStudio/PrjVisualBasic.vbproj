@@ -176,6 +176,12 @@
     <Compile Include="Mouse\FrmMouse.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Mouse\frmMouseEvent.Designer.vb">
+      <DependentUpon>frmMouseEvent.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mouse\frmMouseEvent.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -232,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mouse\FrmMouse.resx">
       <DependentUpon>FrmMouse.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mouse\frmMouseEvent.resx">
+      <DependentUpon>frmMouseEvent.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
