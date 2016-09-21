@@ -72,11 +72,21 @@
       <HintPath>DLL\Interop.Microsoft.Office.Core.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="Microsoft.Data.Schema, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.Data.Schema.Tools, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.Data.Schema.Utilities, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>DLL\Microsoft.Office.Interop.Excel.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualStudio.AppDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.Data.Schema.Package, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.OLE.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.Shell.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.TemplateWizardInterface, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.TextManager.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="OpenNETCF.Desktop.Communication, Version=2.9.2244.24857, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>DLL\OpenNETCF.Desktop.Communication.dll</HintPath>
@@ -84,6 +94,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -106,6 +117,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Barcode\frmBarcode.Designer.vb">
+      <DependentUpon>frmBarcode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Barcode\frmBarcode.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Chart\frmChartLine.Designer.vb">
       <DependentUpon>frmChartLine.vb</DependentUpon>
     </Compile>
@@ -116,6 +133,12 @@
       <DependentUpon>frmChartBar.vb</DependentUpon>
     </Compile>
     <Compile Include="Chart\frmChartBar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\frmConnectionString.Designer.vb">
+      <DependentUpon>frmConnectionString.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Data\frmConnectionString.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Date\ModDate.vb" />
@@ -212,6 +235,9 @@
     <EmbeddedResource Include="Chart\frmChartLine.resx">
       <DependentUpon>frmChartLine.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Data\frmConnectionString.resx">
+      <DependentUpon>frmConnectionString.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Device\frmDevice.resx">
       <DependentUpon>frmDevice.vb</DependentUpon>
     </EmbeddedResource>
@@ -263,6 +289,7 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="General\" />
