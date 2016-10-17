@@ -27,6 +27,7 @@ Partial Class frmData
         Me.ItemCode = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ItemName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnInsertPara = New System.Windows.Forms.Button()
+        Me.ButtonInsertTrans = New System.Windows.Forms.Button()
         CType(Me.dgSample, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -68,15 +69,25 @@ Partial Class frmData
         Me.btnInsertPara.Text = "Insert Para"
         Me.btnInsertPara.UseVisualStyleBackColor = True
         '
-        'frmDatabaseConn
+        'ButtonInsertTrans
+        '
+        Me.ButtonInsertTrans.Location = New System.Drawing.Point(293, 93)
+        Me.ButtonInsertTrans.Name = "ButtonInsertTrans"
+        Me.ButtonInsertTrans.Size = New System.Drawing.Size(196, 50)
+        Me.ButtonInsertTrans.TabIndex = 3
+        Me.ButtonInsertTrans.Text = "Insert Transaction"
+        Me.ButtonInsertTrans.UseVisualStyleBackColor = True
+        '
+        'frmData
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(960, 472)
+        Me.Controls.Add(Me.ButtonInsertTrans)
         Me.Controls.Add(Me.btnInsertPara)
         Me.Controls.Add(Me.dgSample)
         Me.Controls.Add(Me.BtnInsert)
-        Me.Name = "frmDatabaseConn"
+        Me.Name = "frmData"
         Me.Text = "frmDatabaseConn"
         CType(Me.dgSample, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -87,4 +98,5 @@ Partial Class frmData
     Friend WithEvents ItemCode As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ItemName As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents btnInsertPara As System.Windows.Forms.Button
+    Friend WithEvents ButtonInsertTrans As System.Windows.Forms.Button
 End Class

@@ -13,15 +13,16 @@ Public Class frmData
         Debug.Print(Environment.Is64BitOperatingSystem)
 
 
+        'strSQLConn = "Data Source=ServerName;Initial Catalog=AdventureWorks2014;Persist Security Info=True;User ID=sa;Password=YourSecret"
+
+        ReadDataFromDB()
 
     End Sub
 
 
 
-    'strSQLConn = "Data Source=ServerName;Initial Catalog=AdventureWorks2014;Persist Security Info=True;User ID=sa;Password=YourSecret"
 
-    'ReadDataFromDB()
-
+ 
     Private Sub ReadDataFromDB()
 
         Dim sqlConn As New SqlConnection(strSQLConn)
@@ -47,6 +48,28 @@ Public Class frmData
     End Sub
 
 
+    Private Sub BtnInsert_Click(sender As System.Object, e As System.EventArgs) Handles BtnInsert.Click
+
+        Dim sqlConn As New SqlConnection(strSQLConn)
+
+        Dim cmd As New System.Data.SqlClient.SqlCommand
+        cmd.CommandType = System.Data.CommandType.Text
+        cmd.CommandText = "INSERT INTO ItemMaster  ( ItemCode,  ItemName  ,CategoryCode ,Color)  Values ( '60100' , 'AirLine', 9, 'Red') "
+        cmd.Connection = sqlConn
+
+        Try
+
+            sqlConn.Open()
+            cmd.ExecuteNonQuery()
+            sqlConn.Close()
+
+            MsgBox("Insert Success", MsgBoxStyle.Information)
+
+        Catch ex As Exception
+            sqlConn = Nothing
+        End Try
+
+    End Sub
 
 
     Private Sub btnInsertPara_Click(sender As System.Object, e As System.EventArgs) Handles btnInsertPara.Click
@@ -84,29 +107,60 @@ Public Class frmData
     End Sub
 
 
-    Private Sub BtnInsert_Click(sender As System.Object, e As System.EventArgs) Handles BtnInsert.Click
+    Private Sub ButtonInsertTrans_Click(sender As Object, e As EventArgs) Handles ButtonInsertTrans.Click
 
-        Dim sqlConn As New SqlConnection(strSQLConn)
-
-        Dim cmd As New System.Data.SqlClient.SqlCommand
-        cmd.CommandType = System.Data.CommandType.Text
-        cmd.CommandText = "INSERT INTO ItemMaster  ( ItemCode,  ItemName  ,CategoryCode ,Color)  Values ( '60100' , 'AirLine', 9, 'Red') "
-        cmd.Connection = sqlConn
-
-        Try
-
-            sqlConn.Open()
-            cmd.ExecuteNonQuery()
-            sqlConn.Close()
-
-            MsgBox("Insert Success", MsgBoxStyle.Information)
-
-        Catch ex As Exception
-            sqlConn = Nothing
-        End Try
+        InsertWithTransaction()
+        ReadDataFromDB()
 
     End Sub
 
+    Private Sub InsertWithTransaction()
+
+        Dim sqlConn As New SqlConnection(strSQLConn)
+        sqlConn.Open()
+
+        Dim command As SqlCommand = sqlConn.CreateCommand()
+        Dim transaction As SqlTransaction
+
+        transaction = sqlConn.BeginTransaction
+        'transaction = sqlConn.BeginTransaction("SampleTransaction")
+
+        command.Connection = sqlConn
+        command.Transaction = transaction
+
+        Try
+            command.CommandText = "INSERT INTO ItemMaster  ( ItemCode,  ItemName  ,CategoryCode ,Color)  Values ( '60191' , 'AirLine', 9, 'Pink') "
+            command.ExecuteNonQuery()
+
+            command.CommandText = "INSERT INTO ItemMaster  ( ItemCode,  ItemName  ,CategoryCode ,Color)  Values ( '90192' , 'AirLine', 9, 'Purple') "
+            command.ExecuteNonQuery()
+
+            'Commit
+            transaction.Commit()
+
+            MessageBox.Show("Success adding 2 records")
+
+        Catch ex As Exception
+
+            Console.WriteLine("Trans Commit Exception Type: {0}", ex.GetType())
+            Console.WriteLine("Trans Message: {0}", ex.Message)
+
+            Try
+                'Rollback
+                transaction.Rollback()
+                Console.WriteLine("Trans Rollback Now")
+
+            Catch ex2 As Exception
+                ' This catch block will handle any errors that may have occurred
+                ' on the server that would cause the rollback to fail, such as
+                ' a closed connection.
+                Console.WriteLine("Trans Rollback Exception Type: {0}", ex2.GetType())
+                Console.WriteLine("Trans Message: {0}", ex2.Message)
+            End Try
+
+        End Try
+
+    End Sub
 
 
 
