@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.PrjVisualStudio.frmConnectionString
+            Me.MainForm = Global.PrjVisualStudio.FrmMenu
         End Sub
     End Class
 End Namespace

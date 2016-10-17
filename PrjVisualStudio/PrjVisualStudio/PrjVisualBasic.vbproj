@@ -199,6 +199,12 @@
     <Compile Include="Mouse\FrmMouse.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Mouse\frmMouseCrossLine.Designer.vb">
+      <DependentUpon>frmMouseCrossLine.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mouse\frmMouseCrossLine.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Mouse\frmMouseEvent.Designer.vb">
       <DependentUpon>frmMouseEvent.vb</DependentUpon>
     </Compile>
@@ -264,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mouse\FrmMouse.resx">
       <DependentUpon>FrmMouse.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mouse\frmMouseCrossLine.resx">
+      <DependentUpon>frmMouseCrossLine.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mouse\frmMouseEvent.resx">
       <DependentUpon>frmMouseEvent.vb</DependentUpon>

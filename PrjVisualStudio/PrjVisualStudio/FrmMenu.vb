@@ -50,4 +50,9 @@
         Dim frm As New frmMouseEvent
         frm.Show()
     End Sub
+
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+        Dim frm As New frmMouseCrossLine
+        frm.Show()
+    End Sub
 End Class

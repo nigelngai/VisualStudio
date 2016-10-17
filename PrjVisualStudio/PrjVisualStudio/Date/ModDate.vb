@@ -96,6 +96,33 @@
     End Function
 
 
+
+
+
+    Private Sub GetNextWednesday(ByVal StartDate As Date)
+
+        Dim value As Date = StartDate
+
+        While Not value.DayOfWeek = DayOfWeek.Wednesday
+            value = value.AddDays(1)
+
+        End While
+
+    End Sub
+
+    Private Sub GetNextThursday(ByVal StartDate As Date)
+
+        Dim value As Date = StartDate
+
+        While Not value.DayOfWeek = DayOfWeek.Thursday
+
+            value = value.AddDays(1)
+
+        End While
+
+    End Sub
+
+
     'Private Sub ButtonGet_Click(sender As System.Object, e As System.EventArgs) Handles ButtonGet.Click
 
     '    Dim SourceDate As Date = ("2016-05-15")
